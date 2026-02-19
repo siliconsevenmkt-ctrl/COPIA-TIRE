@@ -1,0 +1,387 @@
+/* Reset e Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Container Principal */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 40px 30px;
+    max-width: 480px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+/* Avatar/Logo */
+.profile-image {
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out 0.2s both;
+}
+
+.profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    object-fit: contain;
+    background: transparent;
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Nome do Perfil */
+.profile-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 10px;
+    animation: fadeIn 1s ease-out 0.4s both;
+}
+
+/* Bio */
+.bio {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #718096;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    animation: fadeIn 1s ease-out 0.6s both;
+}
+
+/* Container de Links */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* Botões de Link */
+.link-button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    padding: 16px 24px;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 15px;
+    text-decoration: none;
+    color: #2d3748;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+    text-align: left;
+}
+
+/* Animação escalonada para os botões */
+.link-button:nth-child(1) { animation-delay: 0.8s; }
+.link-button:nth-child(2) { animation-delay: 0.95s; }
+.link-button:nth-child(3) { animation-delay: 1.1s; }
+.link-button:nth-child(4) { animation-delay: 1.25s; }
+.link-button:nth-child(5) { animation-delay: 1.4s; }
+.link-button:nth-child(6) { animation-delay: 1.55s; }
+.link-button:nth-child(7) { animation-delay: 1.7s; }
+
+.link-button i {
+    font-size: 1.4rem;
+    width: 24px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.link-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.2);
+    border-color: #FF6B35;
+    background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
+    color: #ffffff;
+}
+
+.link-button:hover i {
+    transform: scale(1.15);
+}
+
+.link-button:active {
+    transform: translateY(-1px);
+}
+
+/* Display da chave PIX */
+.pix-key-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 16px 24px;
+    background: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 15px;
+    color: #2d3748;
+    font-weight: 500;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: 1.7s;
+}
+
+.pix-key-display i {
+    font-size: 1.4rem;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.pix-key-display span {
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    color: #2d3748;
+}
+
+/* Botão para copiar PIX */
+.copy-pix-button {
+    background: linear-gradient(135deg, #4CAF50 0%, #45A049 100%);
+    color: #ffffff;
+    border: none;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(76, 175, 80, 0.3);
+    justify-content: center;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+    animation-delay: 1.85s;
+}
+
+.copy-pix-button i {
+    color: #ffffff !important;
+    font-size: 1.4rem;
+    width: 24px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.copy-pix-button:hover {
+    background: linear-gradient(135deg, #45A049 0%, #4CAF50 100%);
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+}
+
+/* Cores específicas das redes sociais */
+.link-button[href*="youtube.com"] i,
+.link-button[href="#"] i {
+    color: #ff0000;
+}
+
+.link-button[href*="instagram.com"] i {
+    color: #e4405f;
+}
+
+.link-button[href*="tiktok.com"] i {
+    color: #000000;
+}
+
+.link-button[href*="facebook.com"] i {
+    color: #1877f2;
+}
+
+.link-button[href*="wa.me"] i {
+    color: #25D366;
+}
+
+.link-button[href*="refugiotiare.com"] i {
+    color: #FF6B35;
+}
+
+/* Efeito hover mantém as cores originais */
+.link-button:hover i {
+    color: inherit;
+}
+
+/* Notificação de Cópia */
+.copy-notification {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #4CAF50 0%, #45A049 100%);
+    color: white;
+    padding: 16px 32px;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    z-index: 1000;
+    transition: bottom 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.copy-notification.show {
+    bottom: 30px;
+    opacity: 1;
+    visibility: visible;
+}
+
+.copy-notification i {
+    font-size: 1.2rem;
+}
+
+/* Rodapé */
+.footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.85rem;
+    margin-top: 10px;
+    padding: 10px;
+    animation: fadeIn 1.5s ease-out 1.8s both;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer-small {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.footer i {
+    color: #FF6B35;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+        border-radius: 25px;
+    }
+
+    .profile-name {
+        font-size: 1.75rem;
+    }
+
+    .bio {
+        font-size: 0.9rem;
+    }
+
+    .link-button {
+        padding: 14px 20px;
+        font-size: 0.95rem;
+        gap: 12px;
+    }
+    
+    .link-button i {
+        font-size: 1.3rem;
+        width: 22px;
+    }
+
+    .profile-image img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        padding: 25px 15px;
+    }
+
+    .profile-name {
+        font-size: 1.5rem;
+    }
+
+    .link-button {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        gap: 10px;
+    }
+
+    .link-button i {
+        font-size: 1.2rem;
+        width: 20px;
+    }
+}
+
+/* Animação de entrada suave para toda a página */
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    animation: pageLoad 0.5s ease-out;
+}
+
